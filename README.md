@@ -29,10 +29,10 @@ AWS_SECRET_ACCESS_KEY
 
 [こちら](https://code.visualstudio.com/docs/devcontainers/containers)を参考
 
-2. ライブラリのインストール
+2. 依存関係のインストール
 
 ```
-rye sync
+uv sync
 ```
 
 ## アプリケーション(Streamlit)の起動
@@ -40,5 +40,5 @@ rye sync
 ### 開発環境
 
 ```
-rye run streamlit run src/Home.py
+uv run streamlit run src/Home.py
 ```

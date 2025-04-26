@@ -8,7 +8,14 @@
     "vscode": {
       "extensions": ["ms-python.python", "charliermarsh.ruff"],
       "settings": {
-        "python.defaultInterpreterPath": "/opt/rye/shims/python",
+        "python.defaultInterpreterPath": "/app/.venv/bin/python",
+        "python.packaging.manager": "uv",
+        "python.analysis.typeCheckingMode": "basic",
+        "python.analysis.autoImportCompletions": true,
+        "python.analysis.extraPaths": ["/app"],
+        "python.terminal.activateEnvironment": true,
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.testing.pytestEnabled": true,
         "[python]": {
           "editor.defaultFormatter": "charliermarsh.ruff",
           "editor.codeActionsOnSave": {
