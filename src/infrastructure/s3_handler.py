@@ -1,7 +1,7 @@
 import os
+from typing import Any
 
 import boto3
-from mypy_boto3_s3 import S3Client
 
 
 class S3Handler:
@@ -19,7 +19,7 @@ class S3Handler:
         self.storage_type = storage_type
         self.s3 = self._create_client()
 
-    def _create_client(self) -> S3Client:
+    def _create_client(self) -> Any:
         """Create S3 client based on storage type.
 
         Returns:
@@ -32,7 +32,7 @@ class S3Handler:
             return self._create_aws_client()
         return self._create_minio_client()
 
-    def _create_aws_client(self) -> S3Client:
+    def _create_aws_client(self) -> Any:
         """Create AWS S3 client.
 
         Returns:
@@ -54,7 +54,7 @@ class S3Handler:
             aws_secret_access_key=aws_secret_access_key,
         )
 
-    def _create_minio_client(self) -> S3Client:
+    def _create_minio_client(self) -> Any:
         """Create MinIO client.
 
         Returns:
