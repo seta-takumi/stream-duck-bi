@@ -9,12 +9,8 @@ services:
       stream_duck_net:
     depends_on:
       - minio
-    environment:
-      - MINIO_ACCESS_KEY_ID=$MINIO_ACCESS_KEY_ID
-      - MINIO_SECRET_ACCESS_KEY=$MINIO_SECRET_ACCESS_KEY
-      - MINIO_BUCKET=$MINIO_BUCKET
-      - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-      - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    env_file:
+      - ../.env
     entrypoint: /bin/sh -c "tail -f /dev/null"
   minio:
     image: minio/minio
