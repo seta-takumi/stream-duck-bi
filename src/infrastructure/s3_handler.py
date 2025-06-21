@@ -1,10 +1,7 @@
 import os
-from typing import TYPE_CHECKING
 
 import boto3
-
-if TYPE_CHECKING:
-    from mypy_boto3_s3 import S3Client
+from mypy_boto3_s3 import S3Client
 
 
 class S3Handler:
@@ -47,8 +44,9 @@ class S3Handler:
         aws_access_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
         aws_secret_access_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
+        # AWS資格情報がないことをチェックするだけ
         if not aws_access_key_id or not aws_secret_access_key:
-            msg = "AWS credentials are not set in environment variables"
+            pass
 
         return boto3.client(
             "s3",

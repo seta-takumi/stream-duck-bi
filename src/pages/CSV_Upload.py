@@ -2,6 +2,7 @@ import os
 
 import polars as pl
 import streamlit as st
+
 from infrastructure.duckdb import DuckDB
 from page_link import page_link
 
@@ -34,7 +35,7 @@ def upload_file_process(
 ) -> None:
     """Process the uploaded file and save it to an S3 or Minio bucket.
 
-    Display the uploaded data and allow the user to choose whether to save 
+    Display the uploaded data and allow the user to choose whether to save
     the data to S3 or create an SQL query.
 
     Args:
@@ -56,9 +57,7 @@ def upload_file_process(
 
     with col2:
         if st.button("SQLを作成", use_container_width=True):
-            st.session_state["show_query_area"] = not st.session_state.get(
-                "show_query_area", False
-            )
+            st.session_state["show_query_area"] = not st.session_state.get("show_query_area", False)
 
 
 def execute_query_process(

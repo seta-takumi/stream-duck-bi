@@ -1,12 +1,9 @@
 import os
-from typing import TYPE_CHECKING
+from io import BytesIO
 
 import duckdb
 import polars as pl
 import streamlit as st
-
-if TYPE_CHECKING:
-    from io import BytesIO
 
 
 class DuckDB:

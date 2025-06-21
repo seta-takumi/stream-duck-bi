@@ -1,6 +1,7 @@
 import os
 
 import streamlit as st
+
 from infrastructure.duckdb import DuckDB
 from infrastructure.s3_handler import S3Handler
 from page_link import page_link
