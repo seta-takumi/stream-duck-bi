@@ -9,5 +9,10 @@ wheels/
 # venv
 .venv
 
+# duckdb file
+*.duckdb
+*.db
+
 # other
 .DS_Store
+.env
